@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zona Sur de Honduras — Naturaleza Viva</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="java.js" defer></script>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Zona Sur · HN - Grupo #1</div>
+  <ul class="nav-links">
+    <li><a href="#flora">Flora</a></li>
+    <li><a href="#fauna">Fauna</a></li>
+    <li><a href="#turismo">Turismo</a></li>
+    <li><a href="#protegidas">Áreas Protegidas</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#galeria">Galería</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="leaves-container" id="leavesContainer"></div>
+
+  <div class="hero-text">
+    <div class="hero-tag">Honduras · Golfo de Fonseca - Grupo #1</div>
+    <h1 class="hero-title">
+        Honduras<br>
+      <span class="accent">Zona</span><br>
+      Sur <br>
+      <span class="accent">Viva</span>
+    </h1>
+    <p class="hero-subtitle">
+      Un ecosistema extraordinario donde el manglar abraza el mar, la fauna silvestre prospera y la naturaleza se expresa en toda su plenitud.
+    </p>
+    <div class="hero-cta">
+      <a href="#flora" class="btn-primary">Explorar</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="eco-orb">
+      <div class="orb-inner">
+        <span class="orb-emoji">🌿</span>
+        <div class="orb-stat">Golfo de Fonseca<br>Zona Sur de Honduras</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item reveal">
+    <span class="stat-num">3</span>
+    <span class="stat-label">Tipos de mangle</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">6+</span>
+    <span class="stat-label">Áreas Protegidas</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">20+</span>
+    <span class="stat-label">Especies de aves</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">1</span>
+    <span class="stat-label">Sitio RAMSAR</span>
+  </div>
+</div>
+
+<!-- FLORA -->
+<section id="flora">
+  <div class="section-header reveal">
+    <div class="section-number">01</div>
+    <div class="section-title-group">
+      <div class="section-tag">Biodiversidad Vegetal</div>
+      <h2 class="section-title">Flora del<br>Sur</h2>
+    </div>
+  </div>
+
+  <div class="flora-grid">
+    <div class="flora-left reveal">
+      <p class="flora-intro">
+        La flora del sur de Honduras está adaptada a climas secos y altas temperaturas. Predominan bosques secos y vegetación costera que conviven en perfecta armonía con el ecosistema del Golfo de Fonseca.
+      </p>
+      <div class="species-grid">
+        <div class="species-card"><div class="species-name">🌳 Mangle Rojo</div></div>
+        <div class="species-card"><div class="species-name">🌿 Mangle Blanco</div></div>
+        <div class="species-card"><div class="species-name">🌱 Curumo Negro</div></div>
+        <div class="species-card"><div class="species-name">🌲 Guanacaste</div></div>
+        <div class="species-card"><div class="species-name">🌳 Ceiba</div></div>
+        <div class="species-card"><div class="species-name">🌿 Amate</div></div>
+        <div class="species-card"><div class="species-name">🫙 Jícaro</div></div>
+        <div class="species-card"><div class="species-name">🌵 Espino</div></div>
+        <div class="species-card"><div class="species-name">🌵 Acacias</div></div>
+        <div class="species-card"><div class="species-name">🌵 Cactus</div></div>
+      </div>
+    </div>
+
+    <div class="flora-right reveal">
+      <div class="manglar-card">
+        <h3 class="manglar-title">Los Manglares: Guardianes del Golfo</h3>
+        <ul class="manglar-benefits">
+          <li>Protegen la franja costera contra la erosión y los fenómenos climáticos extremos.</li>
+          <li>Funcionan como criaderos naturales de peces, camarones y mariscos esenciales para la economía local.</li>
+          <li>Mantienen el equilibrio ecológico completo del Golfo de Fonseca, albergando especies únicas.</li>
+          <li>Actúan como filtros naturales del agua y capturadores de carbono atmosférico.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAUNA -->
+<section id="fauna">
+  <div class="section-header reveal">
+    <div class="section-number">02</div>
+    <div class="section-title-group">
+      <div class="section-tag">Biodiversidad Animal</div>
+      <h2 class="section-title">Fauna<br>Silvestre</h2>
+    </div>
+  </div>
+
+  <div class="fauna-categories">
+    <div class="fauna-category reveal">
+      <div class="fauna-category-header">
+        <span class="fauna-icon">🦌</span>
+        <div>
+          <div class="fauna-cat-title">Mamíferos</div>
+          <div class="fauna-cat-subtitle">Terrestres y silvestres</div>
+        </div>
+      </div>
+      <div class="fauna-list">
+        <span class="fauna-tag">Venado</span>
+        <span class="fauna-tag">Mapache</span>
+        <span class="fauna-tag">Coyote</span>
+        <span class="fauna-tag">Zorro</span>
+        <span class="fauna-tag">Gato montés</span>
+        <span class="fauna-tag">Puma</span>
+        <span class="fauna-tag">Ocelote</span>
+        <span class="fauna-tag">Cerdo de monte</span>
+      </div>
+    </div>
+
+    <div class="fauna-category reveal">
+      <div class="fauna-category-header">
+        <span class="fauna-icon">🦅</span>
+        <div>
+          <div class="fauna-cat-title">Aves</div>
+          <div class="fauna-cat-subtitle">Residentes y migratorias</div>
+        </div>
+      </div>
+      <div class="fauna-list">
+        <span class="fauna-tag">Pelícanos</span>
+        <span class="fauna-tag">Garzas</span>
+        <span class="fauna-tag">Águila pescadora</span>
+        <span class="fauna-tag">Urracas</span>
+        <span class="fauna-tag">Palomas</span>
+        <span class="fauna-tag">Zanates</span>
+        <span class="fauna-tag">Correcaminos</span>
+      </div>
+    </div>
+
+    <div class="fauna-category reveal">
+      <div class="fauna-category-header">
+        <span class="fauna-icon">🦎</span>
+        <div>
+          <div class="fauna-cat-title">Reptiles</div>
+          <div class="fauna-cat-subtitle">Herpetofauna regional</div>
+        </div>
+      </div>
+      <div class="fauna-list">
+        <span class="fauna-tag">Iguanas</span>
+        <span class="fauna-tag">Garrobos</span>
+        <span class="fauna-tag">Serpientes</span>
+        <span class="fauna-tag">🐢 Tortuga golfina</span>
+      </div>
+      <p style="font-size:0.85rem; color:rgba(244,233,208,0.55); margin-top:1.2rem; font-style:italic;">
+        La tortuga golfina llega a desovar en las playas del Golfo de Fonseca.
+      </p>
+    </div>
+
+    <div class="fauna-category marine reveal">
+      <div class="fauna-category-header">
+        <span class="fauna-icon">🐟</span>
+        <div>
+          <div class="fauna-cat-title">Especies Marinas</div>
+          <div class="fauna-cat-subtitle">Riqueza del Golfo de Fonseca</div>
+        </div>
+      </div>
+      <div class="fauna-list">
+        <span class="fauna-tag">🐟 Peces</span>
+        <span class="fauna-tag">🦐 Camarones</span>
+        <span class="fauna-tag">🦀 Cangrejos</span>
+        <span class="fauna-tag">🐚 Curiles</span>
+        <span class="fauna-tag">🐚 Moluscos</span>
+        <span class="fauna-tag">🫁 Mantarrayas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TURISMO -->
+<section id="turismo">
+  <div class="section-header reveal">
+    <div class="section-number">03</div>
+    <div class="section-title-group">
+      <div class="section-tag">Destinos y Experiencias</div>
+      <h2 class="section-title">Turismo<br>Costero</h2>
+    </div>
+  </div>
+
+  <div class="turismo-grid">
+    <div class="turismo-card reveal">
+      <span class="turismo-emoji">🌋</span>
+      <div class="turismo-name">Amapala — Isla del Tigre</div>
+      <p class="turismo-desc">Isla volcánica con playas de arenas negras, miradores panorámicos y una atmósfera única en el Golfo de Fonseca.</p>
+    </div>
+    <div class="turismo-card reveal">
+      <span class="turismo-emoji">⛵</span>
+      <div class="turismo-name">San Lorenzo</div>
+      <p class="turismo-desc">Paseos en lancha por esteros y manglares, complementados con restaurantes especializados en mariscos frescos.</p>
+    </div>
+    <div class="turismo-card reveal">
+      <span class="turismo-emoji">🏖️</span>
+      <div class="turismo-name">Cedeño</div>
+      <p class="turismo-desc">Playa muy visitada durante Semana Santa. Ambiente festivo y aguas cálidas del Golfo de Fonseca.</p>
+    </div>
+    <div class="turismo-card reveal">
+      <span class="turismo-emoji">🌅</span>
+      <div class="turismo-name">Punta Ratón</div>
+      <p class="turismo-desc">Playa tranquila y serena en el Golfo de Fonseca, ideal para quienes buscan descanso y naturaleza sin multitudes.</p>
+    </div>
+    <div class="turismo-card reveal">
+      <span class="turismo-emoji">🌊</span>
+      <div class="turismo-name">Los Delgaditos</div>
+      <p class="turismo-desc">Playa de turismo local con acceso sencillo y ambiente familiar, apreciada por comunidades cercanas.</p>
+    </div>
+    <div class="turismo-card reveal">
+      <span class="turismo-emoji">🏔️</span>
+      <div class="turismo-name">San Marcos de Colón</div>
+      <p class="turismo-desc">Zona montañosa con clima más fresco que contrasta con el calor costero. Naturaleza exuberante y temperatura agradable.</p>
+    </div>
+  </div>
+
+  <div class="actividades-section reveal" style="margin-top:2.5rem;">
+    <div class="actividades-label">Actividades</div>
+    <div class="actividades-list">
+      <div class="actividad-item">Paseos en lancha por esteros</div>
+      <div class="actividad-item">Observación de aves silvestres</div>
+      <div class="actividad-item">Visitar playas del Golfo</div>
+      <div class="actividad-item">Gastronomía de mariscos</div>
+      <div class="actividad-item">Pesca artesanal</div>
+      <div class="actividad-item">Senderismo en manglares</div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONAS PROTEGIDAS -->
+<section id="protegidas">
+  <div class="section-header reveal">
+    <div class="section-number">04</div>
+    <div class="section-title-group">
+      <div class="section-tag">Conservación Ambiental</div>
+      <h2 class="section-title">Áreas<br>Protegidas</h2>
+    </div>
+  </div>
+
+  <div class="protegidas-grid">
+    <div class="protegida-card ramsar-highlight reveal">
+      <div class="protegida-badge">🌍 Sitio RAMSAR</div>
+      <div class="protegida-name">Sistema de Humedales del Golfo de Fonseca</div>
+      <p class="protegida-desc">Declarado sitio RAMSAR de importancia internacional. Incluye manglares, esteros e islas que albergan una biodiversidad extraordinaria.</p>
+    </div>
+
+    <div class="protegida-card reveal">
+      <div class="protegida-badge">🏝️ Parque Nacional Marino</div>
+      <div class="protegida-name">Archipiélago del Golfo de Fonseca</div>
+      <p class="protegida-desc">Protege varias islas y la fauna marina del golfo, asegurando la reproducción y conservación de especies costeras.</p>
+    </div>
+
+    <div class="protegida-card reveal">
+      <div class="protegida-badge">🦜 Área de Hábitat</div>
+      <div class="protegida-name">Bahía de Chismuyo</div>
+      <p class="protegida-desc">Área de manejo de hábitat con extensos manglares y una gran variedad de aves residentes y migratorias.</p>
+    </div>
+
+    <div class="protegida-card reveal">
+      <div class="protegida-badge">💧 Humedal</div>
+      <div class="protegida-name">Laguna El Jicarito</div>
+      <p class="protegida-desc">Importante humedal para aves acuáticas y fauna diversa. Ecosistema vital en el corredor ecológico del sur.</p>
+    </div>
+
+    <div class="protegida-card reveal">
+      <div class="protegida-badge">🌿 Área Natural</div>
+      <div class="protegida-name">La Berbería</div>
+      <p class="protegida-desc">Área natural en Choluteca protegida por su riqueza en biodiversidad y la diversidad de ecosistemas que alberga.</p>
+    </div>
+
+    <div class="protegida-card reveal">
+      <div class="protegida-badge">🏔️ Uso Múltiple</div>
+      <div class="protegida-name">Área de Uso Múltiple Isla del Tigre</div>
+      <p class="protegida-desc">Zona protegida para conservar el ecosistema de la isla volcánica y sus especies endémicas únicas del Golfo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO GOLFO DE FONSECA -->
+<section id="video" style="background: linear-gradient(160deg, #0d2118 0%, #0a1f2e 100%); padding: 6rem 5rem;">
+  <div class="section-header reveal">
+    <div class="section-number">05</div>
+    <div class="section-title-group">
+      <div class="section-tag">Documental Visual</div>
+      <h2 class="section-title">El Golfo de<br>Fonseca</h2>
+    </div>
+  </div>
+  <div class="reveal" style="max-width:960px; margin:0 auto;">
+    <p style="font-size:1.15rem; font-weight:300; line-height:1.8; color:rgba(244,233,208,0.7); margin-bottom:2.5rem; max-width:680px; border-left:3px solid var(--azul-claro); padding-left:1.5rem;">
+      Sumérgete en la belleza del Golfo de Fonseca, uno de los ecosistemas más ricos de Centroamérica.
+    </p>
+    <div style="position:relative; padding-bottom:62%; height:0; overflow:hidden; border:1px solid rgba(72,202,228,0.3); box-shadow:0 30px 80px rgba(0,0,0,0.5);">
+      <iframe width="100%" height="572" src="https://www.youtube.com/embed/7euTo9i0q7I" title="GOLFO DE FONSECA, HONDURAS 2023" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA DE DESTINOS -->
+<section id="galeria" style="background: linear-gradient(160deg, #0a1f2e 0%, #1a3a2a 100%); padding: 6rem 5rem;">
+  <div class="section-header reveal">
+    <div class="section-number">06</div>
+    <div class="section-title-group">
+      <div class="section-tag">Destinos Fotográficos</div>
+      <h2 class="section-title">Galería de<br>Lugares</h2>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem;">
+
+    <!-- San Marcos de Colón -->
+    <div class="galeria-card reveal">
+      <div class="galeria-img-wrap">
+        <!-- FOTO SAN MARCOS DE COLÓN: cambia src por la ruta de tu imagen -->
+        <img class="galeria-img" src="rsc/SanMarcosColon.jpeg" alt="San Marcos de Colón">
+      </div>
+      <div class="galeria-info">
+        <div class="galeria-nombre">San Marcos de Colón</div>
+        <div class="galeria-subtitulo">Zona montañosa · Clima fresco</div>
+      </div>
+    </div>
+
+    <!-- Punta Ratón -->
+    <div class="galeria-card reveal">
+      <div class="galeria-img-wrap">
+        <!-- FOTO PUNTA RATÓN: cambia src por la ruta de tu imagen -->
+        <img class="galeria-img" src="rsc/PuntaRaton.jpeg" alt="Punta Ratón">
+      </div>
+      <div class="galeria-info">
+        <div class="galeria-nombre">Punta Ratón</div>
+        <div class="galeria-subtitulo">Playa tranquila · Golfo de Fonseca</div>
+      </div>
+    </div>
+
+    <!-- Amapala -->
+    <div class="galeria-card reveal">
+      <div class="galeria-img-wrap">
+        <!-- FOTO AMAPALA: cambia src por la ruta de tu imagen -->
+        <img class="galeria-img" src="rsc/Amapala.jpeg" alt="Amapala">
+      </div>
+      <div class="galeria-info">
+        <div class="galeria-nombre">Amapala</div>
+        <div class="galeria-subtitulo">Isla del Tigre · Volcánica</div>
+      </div>
+    </div>
+
+    <!-- Los Delgaditos -->
+    <div class="galeria-card reveal">
+      <div class="galeria-img-wrap">
+        <!-- FOTO LOS DELGADITOS: cambia src por la ruta de tu imagen -->
+        <img class="galeria-img" src="rsc/Delgaditos.jpeg" alt="Los Delgaditos">
+      </div>
+      <div class="galeria-info">
+        <div class="galeria-nombre">Los Delgaditos</div>
+        <div class="galeria-subtitulo">Playa local · Turismo familiar</div>
+      </div>
+    </div>
+
+    <!-- Cedeño -->
+    <div class="galeria-card reveal">
+      <div class="galeria-img-wrap">
+        <!-- FOTO CEDEÑO: cambia src por la ruta de tu imagen -->
+        <img class="galeria-img" src="rsc/Cedeño.jpeg" alt="Cedeño">
+      </div>
+      <div class="galeria-info">
+        <div class="galeria-nombre">Cedeño</div>
+        <div class="galeria-subtitulo">Playa festiva · Semana Santa</div>
+      </div>
+    </div>
+
+    <!-- San Lorenzo -->
+    <div class="galeria-card reveal">
+      <div class="galeria-img-wrap">
+        <!-- FOTO SAN LORENZO: cambia src por la ruta de tu imagen -->
+        <img class="galeria-img" src="rsc/SanLorenzo.jpeg" alt="San Lorenzo">
+      </div>
+      <div class="galeria-info">
+        <div class="galeria-nombre">San Lorenzo</div>
+        <div class="galeria-subtitulo">Manglares · Mariscos frescos</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">🌿 Zona Sur · HN</div>
+  <div class="footer-credits">Golfo de Fonseca — Naturaleza, Cultura y Biodiversidad <br>Grupo #1</div>
+  <div class="footer-copy">Honduras · Centroamérica</div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+</body>
+</html>
