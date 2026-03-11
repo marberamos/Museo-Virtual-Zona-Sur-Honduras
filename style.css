@@ -1,0 +1,764 @@
+:root {
+    --verde-oscuro: #1a3a2a;
+    --verde-medio: #2d6a4f;
+    --verde-claro: #52b788;
+    --verde-lima: #95d5b2;
+    --arena: #f4e9d0;
+    --dorado: #d4a017;
+    --coral: #e07a5f;
+    --azul-mar: #1e6091;
+    --azul-claro: #48cae4;
+    --cafe: #6b3d14;
+    --blanco: #fafaf7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--verde-oscuro);
+    color: var(--arena);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    width: 12px; height: 12px;
+    background: var(--verde-claro);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
+    mix-blend-mode: screen;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--verde-claro);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.18s ease, width 0.3s, height 0.3s;
+    opacity: 0.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(26,58,42,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(82,183,136,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: var(--verde-claro);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--arena);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    transition: opacity 0.3s, color 0.3s;
+  }
+
+  .nav-links a:hover { opacity: 1; color: var(--verde-claro); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(45,106,79,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(30,96,145,0.3) 0%, transparent 60%),
+      linear-gradient(160deg, #0d2118 0%, #1a3a2a 40%, #0a1f2e 100%);
+  }
+
+  /* Animated leaves */
+  .leaves-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .leaf {
+    position: absolute;
+    width: 8px; height: 20px;
+    background: linear-gradient(135deg, var(--verde-claro), var(--verde-medio));
+    border-radius: 50% 50% 50% 0;
+    opacity: 0;
+    animation: fallLeaf linear infinite;
+  }
+
+  @keyframes fallLeaf {
+    0% { opacity: 0; transform: translateY(-20px) rotate(0deg); }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { opacity: 0; transform: translateY(110vh) rotate(360deg) translateX(40px); }
+  }
+
+  .hero-text {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--verde-claro);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 30px; height: 1px;
+    background: var(--verde-claro);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 900;
+    line-height: 0.92;
+    color: var(--blanco);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-title .accent {
+    color: var(--verde-claro);
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(244,233,208,0.7);
+    margin-top: 1.5rem;
+    max-width: 380px;
+    line-height: 1.7;
+  }
+
+  .hero-cta {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2.2rem;
+    background: var(--verde-claro);
+    color: var(--verde-oscuro);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+
+  .btn-primary:hover {
+    background: var(--verde-lima);
+    transform: translateY(-2px);
+  }
+
+  .hero-visual {
+    grid-column: 2;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Big eco circle */
+  .eco-orb {
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%,
+      rgba(82,183,136,0.2) 0%,
+      rgba(45,106,79,0.15) 40%,
+      rgba(30,96,145,0.1) 80%,
+      transparent 100%);
+    border: 1px solid rgba(82,183,136,0.25);
+    position: relative;
+    animation: orbPulse 6s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @keyframes orbPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 60px rgba(82,183,136,0.1); }
+    50% { transform: scale(1.04); box-shadow: 0 0 120px rgba(82,183,136,0.2); }
+  }
+
+  .eco-orb::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent, rgba(82,183,136,0.4), transparent, rgba(72,202,228,0.3), transparent);
+    animation: orbSpin 12s linear infinite;
+    z-index: -1;
+  }
+
+  @keyframes orbSpin { to { transform: rotate(360deg); } }
+
+  .orb-inner {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .orb-emoji { font-size: 5rem; display: block; animation: float 4s ease-in-out infinite; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .orb-stat {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--verde-lima);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    background: rgba(45,106,79,0.3);
+    border-top: 1px solid rgba(82,183,136,0.2);
+    border-bottom: 1px solid rgba(82,183,136,0.2);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem 5rem;
+    position: relative;
+    z-index: 3;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 1rem;
+    border-right: 1px solid rgba(82,183,136,0.15);
+  }
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--verde-claro);
+    display: block;
+  }
+  .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(244,233,208,0.55);
+    margin-top: 0.3rem;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 5rem;
+    position: relative;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(82,183,136,0.12);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-bottom: -0.5rem;
+  }
+
+  .section-title-group { flex: 1; }
+
+  .section-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--verde-claro);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    color: var(--blanco);
+    line-height: 1.05;
+  }
+
+  /* FLORA SECTION */
+  #flora { background: linear-gradient(170deg, #1a3a2a 0%, #0f2d1e 100%); }
+
+  .flora-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .flora-left { }
+
+  .flora-intro {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(244,233,208,0.8);
+    margin-bottom: 2.5rem;
+    border-left: 3px solid var(--verde-claro);
+    padding-left: 1.5rem;
+  }
+
+  .species-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .species-card {
+    background: rgba(45,106,79,0.2);
+    border: 1px solid rgba(82,183,136,0.2);
+    padding: 0.9rem 1.2rem;
+    transition: background 0.3s, border-color 0.3s, transform 0.2s;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+  }
+
+  .species-card:hover {
+    background: rgba(82,183,136,0.2);
+    border-color: var(--verde-claro);
+    transform: translateX(4px);
+  }
+
+  .species-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--blanco);
+  }
+
+  .flora-right { }
+
+  .manglar-card {
+    background: linear-gradient(135deg, rgba(30,96,145,0.3), rgba(45,106,79,0.3));
+    border: 1px solid rgba(72,202,228,0.3);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .manglar-card::before {
+    content: '🌿';
+    position: absolute;
+    font-size: 8rem;
+    right: -1rem;
+    top: -1rem;
+    opacity: 0.12;
+  }
+
+  .manglar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--azul-claro);
+    margin-bottom: 1.5rem;
+  }
+
+  .manglar-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .manglar-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(244,233,208,0.85);
+  }
+
+  .manglar-benefits li::before {
+    content: '◈';
+    color: var(--azul-claro);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* FAUNA SECTION */
+  #fauna {
+    background: linear-gradient(170deg, #0f2d1e 0%, #12253a 100%);
+  }
+
+  .fauna-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .fauna-category {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(82,183,136,0.15);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .fauna-category:hover { border-color: rgba(82,183,136,0.4); }
+
+  .fauna-category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .fauna-icon { font-size: 2rem; }
+
+  .fauna-cat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--blanco);
+  }
+
+  .fauna-cat-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--verde-claro);
+    opacity: 0.8;
+  }
+
+  .fauna-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .fauna-tag {
+    padding: 0.35rem 0.9rem;
+    border: 1px solid rgba(82,183,136,0.3);
+    font-size: 0.85rem;
+    color: rgba(244,233,208,0.8);
+    transition: all 0.25s;
+    border-radius: 2px;
+  }
+
+  .fauna-tag:hover {
+    background: rgba(82,183,136,0.2);
+    color: var(--blanco);
+    border-color: var(--verde-claro);
+  }
+
+  .fauna-category.marine {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(30,96,145,0.2), rgba(72,202,228,0.05));
+    border-color: rgba(72,202,228,0.2);
+  }
+
+  .fauna-category.marine .fauna-list { flex-direction: row; }
+
+  /* TURISMO SECTION */
+  #turismo {
+    background: linear-gradient(160deg, #12253a 0%, #1a3a2a 100%);
+  }
+
+  .turismo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .turismo-card {
+    background: linear-gradient(145deg, rgba(45,106,79,0.2), rgba(26,58,42,0.3));
+    border: 1px solid rgba(82,183,136,0.2);
+    padding: 2rem;
+    transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .turismo-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--verde-claro), var(--azul-claro));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .turismo-card:hover::after { transform: scaleX(1); }
+
+  .turismo-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(82,183,136,0.5);
+    background: linear-gradient(145deg, rgba(45,106,79,0.35), rgba(26,58,42,0.4));
+  }
+
+  .turismo-emoji { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+
+  .turismo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+  }
+
+  .turismo-desc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(244,233,208,0.65);
+  }
+
+  .actividades-section {
+    background: rgba(212,160,23,0.08);
+    border: 1px solid rgba(212,160,23,0.25);
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .actividades-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+
+  .actividades-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .actividad-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    color: rgba(244,233,208,0.8);
+  }
+
+  .actividad-item::before {
+    content: '→';
+    color: var(--dorado);
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* ZONAS PROTEGIDAS */
+  #protegidas {
+    background: linear-gradient(160deg, #1a3a2a 0%, #0d2118 100%);
+  }
+
+  .protegidas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .protegida-card {
+    background: rgba(26,58,42,0.6);
+    border: 1px solid rgba(82,183,136,0.2);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .protegida-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, var(--verde-claro), var(--azul-claro));
+  }
+
+  .protegida-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(82,183,136,0.45);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  .protegida-badge {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    background: rgba(82,183,136,0.15);
+    border: 1px solid rgba(82,183,136,0.3);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--verde-claro);
+    margin-bottom: 1rem;
+  }
+
+  .protegida-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--blanco);
+    margin-bottom: 0.8rem;
+  }
+
+  .protegida-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(244,233,208,0.65);
+  }
+
+  .ramsar-highlight {
+    background: linear-gradient(135deg, rgba(72,202,228,0.15), rgba(30,96,145,0.15));
+    border-color: rgba(72,202,228,0.35) !important;
+  }
+
+  .ramsar-highlight::before {
+    background: linear-gradient(180deg, var(--azul-claro), var(--verde-claro));
+  }
+
+  /* FOOTER */
+  footer {
+    background: #080f0a;
+    padding: 3rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(82,183,136,0.2);
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--verde-claro);
+  }
+
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: rgba(244,233,208,0.35);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-credits {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.9rem;
+    color: rgba(244,233,208,0.45);
+    font-style: italic;
+  }
+
+  /* SCROLL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Wave divider */
+  .wave-divider {
+    overflow: hidden;
+    line-height: 0;
+    background: transparent;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--verde-oscuro); }
+  ::-webkit-scrollbar-thumb { background: var(--verde-medio); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--verde-claro); }
+
+  /* Responsive tweaks */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 7rem 2rem 2rem; }
+    .hero-visual { display: none; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 1.5rem 2rem; }
+    section { padding: 4rem 2rem; }
+    .flora-grid, .fauna-categories, .turismo-grid, .protegidas-grid {
+      grid-template-columns: 1fr;
+    }
+    .fauna-category.marine { grid-column: span 1; }
+    .section-number { font-size: 5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
