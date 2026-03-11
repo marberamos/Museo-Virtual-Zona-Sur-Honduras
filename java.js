@@ -75,3 +75,26 @@
   document.querySelectorAll('.turismo-grid .turismo-card, .protegidas-grid .protegida-card, .fauna-categories .fauna-category').forEach((el, i) => {
     el.style.transitionDelay = (i * 80) + 'ms';
   });
+
+
+// Lightbox
+  const lightbox       = document.getElementById('lightbox');
+  const lightboxImg    = document.getElementById('lightboxImg');
+  const lightboxCap    = document.getElementById('lightboxCaption');
+  const lightboxClose  = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.galeria-img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxCap.textContent = img.alt;
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
